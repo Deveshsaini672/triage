@@ -1,0 +1,78 @@
+{
+  "config": {
+    "base_url": "http://localhost:8000",
+    "tickets": 50,
+    "concurrency": 5,
+    "unique_ratio": 0.1,
+    "reads": 300,
+    "wait_timeout": 600,
+    "output": "benchmark_50.json",
+    "unique_templates": 5
+  },
+  "ingest": {
+    "latency_ms": {
+      "count": 50,
+      "mean": 76.33431799826212,
+      "p50": 61.24339997768402,
+      "p95": 222.9263000190258,
+      "p99": 224.04909995384514,
+      "max": 224.04909995384514
+    },
+    "wall_seconds": 0.7966785000171512,
+    "throughput_rps": 62.760574057067664,
+    "status_codes": {
+      "202": 50
+    },
+    "accepted": 50
+  },
+  "pipeline": {
+    "statuses": {
+      "classified": 50,
+      "pending/unrouted": 0
+    },
+    "classification_source": {
+      "cache": 50
+    },
+    "cache_hit_rate": 1.0,
+    "llm_calls": 0,
+    "end_to_end_latency_ms": {
+      "count": 50,
+      "mean": 35.826260000000005,
+      "p50": 21.042,
+      "p95": 160.024,
+      "p99": 203.644,
+      "max": 203.644
+    },
+    "end_to_end_throughput_tps": 67.30000457640031
+  },
+  "reads": {
+    "list_tickets": {
+      "latency_ms": {
+        "count": 300,
+        "mean": 48.65357266874829,
+        "p50": 45.776400016620755,
+        "p95": 72.34670000616461,
+        "p99": 111.5268999710679,
+        "max": 125.14329998521134
+      },
+      "throughput_rps": 93.45909396841219,
+      "status_codes": {
+        "200": 300
+      }
+    },
+    "get_ticket": {
+      "latency_ms": {
+        "count": 300,
+        "mean": 46.728630667203106,
+        "p50": 46.638900006655604,
+        "p95": 59.77280001388863,
+        "p99": 63.324499991722405,
+        "max": 71.16500003030524
+      },
+      "throughput_rps": 106.11935866937192,
+      "status_codes": {
+        "200": 300
+      }
+    }
+  }
+}
