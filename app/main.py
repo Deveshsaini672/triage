@@ -3,7 +3,7 @@ from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
 
-import app.models  # noqa: F401  (registers models on Base.metadata)
+import app.models 
 from app.api import auth, health, teams, tickets
 from app.core.logging import configure_logging
 from app.db.base import Base
@@ -14,7 +14,7 @@ configure_logging()
 
 @asynccontextmanager
 async def lifespan(_: FastAPI):
-    # Only the API process creates tables (never the worker) to avoid races.
+   
     Base.metadata.create_all(bind=engine)
     yield
 
