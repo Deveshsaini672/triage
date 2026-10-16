@@ -44,8 +44,7 @@ def classify_ticket(self, ticket_id: str, deferrals: int = 0) -> None:
             )
         except RateLimited as exc:
             db.rollback()
-            # Waiting for budget is not a failure: re-enqueue as a FRESH task so
-            # it doesn't eat the real-error retry budget.
+          
             if deferrals >= settings.max_rate_limit_deferrals:
                 route_to_fallback(db, tid, "rate-limit deferrals exhausted")
                 return
