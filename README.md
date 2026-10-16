@@ -140,7 +140,7 @@ pytest
 
 The test suite uses SQLite, fakeredis, and a fake LLM, so Docker and a Gemini API key are not required.
 
-## Known limitations
+## limitations
 
 - Database tables are created using SQLAlchemy `create_all`; migrations are not configured.
 - The fixed-window rate limiter can allow bursts around window boundaries.
